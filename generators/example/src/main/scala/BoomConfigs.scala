@@ -7,6 +7,56 @@ import freechips.rocketchip.config.{Config}
 // ---------------------
 // BOOM Configs
 // ---------------------
+class TinyBoomConfig1 extends Config(
+  new WithTop ++                                          // use normal top
+  new boom.common.WithoutBoomFPU ++                        // no fp
+  new boom.common.WithMyTinyBooms(1,32) ++                         // 1-wide BOOM
+  new boom.common.WithNBoomCores(1) ++                      // single-core
+  new freechips.rocketchip.system.BaseConfig)               // "base" rocketchip system
+
+class TinyBoomConfig2 extends Config(
+  //new WithExtMemSize(8096) ++
+  new WithTop ++                                            // use normal top
+  new boom.common.WithoutBoomFPU ++                        // no fp
+  new boom.common.WithMyTinyBooms(2,16) ++                         // 1-wide BOOM
+  new boom.common.WithNBoomCores(1) ++                      // single-core
+  new freechips.rocketchip.system.BaseConfig)               // "base" rocketchip system
+
+class TinyBoomConfig4 extends Config(
+  //new WithExtMemSize(8096) ++
+  new WithTop ++                                            // use normal top
+  new boom.common.WithoutBoomFPU ++                        // no fp
+  new boom.common.WithMyTinyBooms(4,8) ++                         // 1-wide BOOM
+  new boom.common.WithNBoomCores(1) ++                      // single-core
+  new freechips.rocketchip.system.BaseConfig)               // "base" rocketchip system
+
+class TinyBoomConfig8 extends Config(
+  
+  //new WithExtMemSize(8096) ++
+  new WithTop ++                                            // use normal top
+  new boom.common.WithoutBoomFPU ++                        // no fp
+  new boom.common.WithMyTinyBooms(8,4) ++                         // 1-wide BOOM
+  new boom.common.WithNBoomCores(1) ++                      // single-core
+  new freechips.rocketchip.system.BaseConfig)               // "base" rocketchip system
+
+class TinyBoomConfig16 extends Config(
+  
+  //new WithExtMemSize(8096) ++
+  new WithTop ++                                            // use normal top
+  new boom.common.WithoutBoomFPU ++                        // no fp
+  new boom.common.WithMyTinyBooms(16,2) ++                         // 1-wide BOOM
+  new boom.common.WithNBoomCores(1) ++                      // single-core
+  new freechips.rocketchip.system.BaseConfig)               // "base" rocketchip system
+
+class TinyBoomConfig32 extends Config(
+  
+  //new WithExtMemSize(8096) ++
+  new WithTop ++                                            // use normal top
+  new boom.common.WithoutBoomFPU ++                        // no fp
+  new boom.common.WithMyTinyBooms(32,1) ++                         // 1-wide BOOM
+  new boom.common.WithNBoomCores(1) ++                      // single-core
+  new freechips.rocketchip.system.BaseConfig)               // "base" rocketchip system
+
 
 class SmallBoomConfig extends Config(
   new WithTop ++                                            // use normal top

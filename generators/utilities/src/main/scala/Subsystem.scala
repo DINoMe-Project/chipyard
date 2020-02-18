@@ -99,7 +99,7 @@ class SubsystemModuleImp[+L <: Subsystem](_outer: L) extends BaseSubsystemModule
 {
   tile_inputs.zip(outer.hartIdList).foreach { case(wire, i) =>
     wire.hartid := i.U
-    wire.reset_vector := global_reset_vector
+    wire.reset_vector := "h80000000".U //global_reset_vector
   }
 
   // create file with boom params
